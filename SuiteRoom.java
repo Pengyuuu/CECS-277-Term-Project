@@ -10,4 +10,9 @@ public class SuiteRoom extends MotelRoom {
 
         return COST;
     }
+
+    @Override
+    public String toString() {
+        return "";
+    }
 }

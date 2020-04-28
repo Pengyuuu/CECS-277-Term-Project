@@ -12,4 +12,10 @@ public class RoomFactory {
 
         return roomType;
     }
+
+
+    @Override
+    public String toString() {
+        return "";
+    }
 }
