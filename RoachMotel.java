@@ -21,14 +21,7 @@ public class RoachMotel {
 		return unique;
 	}
 
-
-
-
-
-
 	public MotelRoom checkIn(RoachColony r, String type, String AmenitiesToFix) {
-
-
 
 		MotelRoom rm = null;
 		if (type.equals("Basic"))
@@ -40,12 +33,11 @@ public class RoachMotel {
 		return rm;
 	}
 
-	public double checkOut(MotelRoom r, int days, String payType)_ {
+	public double checkOut(MotelRoom r, int days, String payType) {
 
 		return r.calculateTotal();
 
 	}
-
 
 	@Override
 	public String toString() {

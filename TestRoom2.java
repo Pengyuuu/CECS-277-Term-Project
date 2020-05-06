@@ -9,13 +9,13 @@ public class TestRoom2 {
         MotelRoom mr2 = new BasicRoom();
         mr2 = new FoodBar(mr2);
         mr2 = new Spa(mr2);
-        mr2 = new RefillBar(mr2);
+        mr2 = new AutoRefill(mr2);
         System.out.println(mr2.getDescription()
                 + " $" + mr2.cost());
 
         MotelRoom mr3 = new BasicRoom();
         mr3 = new Spa(mr3);
-        mr3 = new Shower(mr3);
+        mr3 = new SprayResistantShower(mr3);
         mr3 = new FoodBar(mr3);
         System.out.println(mr3.getDescription()
                 + " $" + mr3.cost());

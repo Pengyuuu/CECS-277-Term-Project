@@ -3,7 +3,7 @@ public class BasicRoom extends MotelRoom {
     private static final double COST = 50.00;
 
     public BasicRoom() {
-        description = "Chocolate Ice Cream";
+        description = "Basic room";
     }
 
     public double cost() {
