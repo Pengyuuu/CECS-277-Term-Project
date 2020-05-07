@@ -12,8 +12,8 @@ public class MasterRoach implements PaymentStrategy {
         dateOfExpiry = d;
     }
 
-    public void pay(int n) {
-        System.out.println("Paid with CreditCard");
+    public void pay(double n) {
+        System.out.println("Paid with MasterRoach");
 
     }
 

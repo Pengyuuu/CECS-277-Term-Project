@@ -1,21 +1,21 @@
 public class RoachPal implements PaymentStrategy {
 
     private String email;
-    private String pw;
+    private String name;
 
 
     public RoachPal(String e, String p) {
         email = e;
-        pw = p;
+        name = p;
     }
 
-    public void pay(int n) {
-        System.out.println("Paid with Paypal");
+    public void pay(double n) {
+        System.out.println("Paid with RoachPal");
 
     }
 
     @Override
     public String toString() {
-        return "Paypal email details: " + email;
+        return "RoachPal email details: " + email;
     }
 }

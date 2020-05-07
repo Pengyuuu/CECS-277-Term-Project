@@ -1,4 +1,4 @@
 public interface PaymentStrategy {
 
-    public void pay(int n );
+    public void pay(double n );
 }

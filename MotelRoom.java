@@ -29,7 +29,15 @@ public abstract class MotelRoom {
     }
 
     public double calculateTotal(){
+        total = this.cost();
         return total;
+    }
+
+    public void pay (PaymentStrategy paymentMethod){
+        double amount = calculateTotal();
+        //System.out.println(this.calculateTotal());
+        paymentMethod.pay(amount);
+
     }
 
     public abstract double cost();

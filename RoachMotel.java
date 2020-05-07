@@ -55,7 +55,29 @@ public class RoachMotel {
 
 	public double checkOut(MotelRoom r, int days, String payType) {
 
-		return r.calculateTotal();
+		double total = r.calculateTotal() * days;
+
+		if (payType == "MasterRoach") {
+			PaymentStrategy card = new MasterRoach("Roach", "1234", "567", "4/28/20");
+			r.pay(card);
+		}
+		else if (payType == "RoachPal") {
+			PaymentStrategy paypal = new RoachPal("roachster@aol.com","roach4life");
+			r.pay(paypal);
+		}
+
+		for (int i = 0; i < rooms.size(); i++){
+			if (rooms.get(i).getDescription() == r.getDescription()) {
+				System.out.println("Room number is: 10" + (1+i) );
+
+				rooms.set(i, null);
+				capacity ++;
+
+			}
+		}
+
+
+		return total;
 
 	}
 
