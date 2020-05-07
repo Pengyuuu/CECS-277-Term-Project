@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class TestRoom2 {
 
 
@@ -26,7 +28,7 @@ public class TestRoom2 {
         System.out.println(rm);
         RoachColony rc1 = new  RoachColony("first colony",100,200);
         ArrayList amenities = new ArrayList();
-        amenities.add("foodbar");
+        amenities.add(new FoodBar());
         amenities.add("spa");
         amenities.add("refillbar");
         amenities.add("shower");

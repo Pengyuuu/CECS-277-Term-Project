@@ -2,8 +2,12 @@
 public class SprayResistantShower extends AmenityDecorator {
 	MotelRoom room;
 	
-	public SprayResistantShower (MotelRoom room) {
+	public SprayResistantShower () {
 		
+	}
+
+	public SprayResistantShower (MotelRoom room) {
+
 		this.room = room;
 	}
 	

@@ -1,7 +1,9 @@
+import java.util.ArrayList;
 
 public class RoachMotel {
 	
 	private static RoachMotel unique;
+	private ArrayList rooms;
 
 	private int capacity;
 
@@ -10,6 +12,14 @@ public class RoachMotel {
 		
 		capacity = 10;
 	}
+
+	public void createRooms() {
+
+		for (int i = 0; i < capacity; i++){
+			rooms.add("10"+(i+1));
+		}
+	}
+
 	
 	public static RoachMotel getInstance() {
 		
@@ -30,6 +40,9 @@ public class RoachMotel {
 			rm = new DeluxeRoom();
 		else if (type.equals("Suite"))
 			rm = new SuiteRoom();
+
+		capacity --;
+
 		return rm;
 	}
 
@@ -39,8 +52,15 @@ public class RoachMotel {
 
 	}
 
+
+
 	@Override
 	public String toString() {
+
+		for (int i = 0; i < capacity; i ++) {
+
+			System.out.println(i);
+		}
 		return "";
 	}
 

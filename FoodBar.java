@@ -3,8 +3,12 @@ public class FoodBar extends AmenityDecorator {
 
 	MotelRoom room;
 	
-	public FoodBar(MotelRoom room) {
+	public FoodBar() {
 		
+	}
+
+	public FoodBar(MotelRoom room) {
+
 		this.room = room;
 	}
 	

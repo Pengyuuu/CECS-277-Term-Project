@@ -3,8 +3,12 @@ public class Spa extends AmenityDecorator {
 
 	MotelRoom room;
 	
-	public Spa(MotelRoom room) {
+	public Spa() {
 		
+	}
+
+	public Spa (MotelRoom room) {
+
 		this.room = room;
 	}
 	
