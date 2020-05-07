@@ -19,7 +19,7 @@ public abstract class MotelRoom {
             else if (list.get(i).equals("spa")) {
                 rm = new Spa(rm);
             }
-            else if (list.get(i).equals("refillbar")) {
+            else if (list.get(i).equals("autorefill")) {
                 rm = new AutoRefill(rm);
             }
             else if (list.get(i).equals("shower")) {

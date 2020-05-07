@@ -37,7 +37,7 @@ public class TestRoom2 {
         MotelRoom r1 = rm.checkIn(rc1,"Suite",amenities);
         System.out.println(rc1);
         System.out.println(rm);
-/*
+
         RoachColony rc2 = new RoachColony("Second colony",1000,0.2);
         ArrayList<String> amenities2 = new ArrayList();
         amenities2.add("foodbar");
@@ -66,7 +66,7 @@ public class TestRoom2 {
 
         System.out.println("cost:" + cost);
         MotelRoom r6 = rm.checkIn(rc6,"Regular",amenities2);
-*/
+
 
     }
 }

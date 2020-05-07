@@ -43,9 +43,9 @@ public class RoachMotel {
 			if (rooms.get(i) == null) {
 
                 room = room.addAmenities(amenities, room);
-                capacity --;
+
+				capacity --;
                 rooms.set(i, room);
-                System.out.println("Added room");
                 break;
             }
         }
@@ -72,12 +72,10 @@ public class RoachMotel {
 
 					rooms.set(i, null);
 					capacity++;
-
+					break;
 				}
 			}
 		}
-
-
 		return total;
 
 	}

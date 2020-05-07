@@ -4,7 +4,7 @@ public class RoomFactory {
     public MotelRoom getRoom (String type) {
         MotelRoom roomType = null;
 
-        if (type.equals("Basic"))
+        if (type.equals("Regular"))
             roomType = new BasicRoom();
         else if (type.equals("Deluxe"))
             roomType = new DeluxeRoom();
