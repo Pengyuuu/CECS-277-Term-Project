@@ -37,8 +37,7 @@ public class RoachMotel {
 
 	    MotelRoom rm = null;
 
-        for (int i = 0; i < capacity; i++){
-			//System.out.println("added room");
+        for (int i = 0; i < rooms.size(); i++){
 
 			if (rooms.get(i) == null) {
                 if (type.equals("Basic"))
@@ -50,12 +49,11 @@ public class RoachMotel {
 
                 rm.addAmenities(amenities);
                 capacity --;
-                rooms.add(i, rm);
-                System.out.println("added room");
+                rooms.set(i, rm);
+                System.out.println(i + "added room");
+                break;
             }
         }
-        //System.out.println(rooms.get(0));
-		System.out.println("checked in");
 		return rm;
 	}
 
