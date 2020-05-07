@@ -10,11 +10,9 @@ public class FoodBar extends AmenityDecorator {
 	public FoodBar(MotelRoom room) {
 
 		this.room = room;
-		//description = this.getDescription();
 	}
 	
 	public String getDescription() {
-		//description += "with food bar";
 		return room.description + " with food bar";
 	}
 	
