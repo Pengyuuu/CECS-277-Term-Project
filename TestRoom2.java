@@ -28,7 +28,7 @@ public class TestRoom2 {
         System.out.println(rm);
         RoachColony rc1 = new  RoachColony("first colony",100,200);
         ArrayList amenities = new ArrayList();
-        amenities.add(new FoodBar());
+        amenities.add("foodbar");
         amenities.add("spa");
         amenities.add("refillbar");
         amenities.add("shower");
@@ -55,6 +55,6 @@ public class TestRoom2 {
         RoachColony rc6 = new RoachColony("sixth colony",600,0.6);
         cost = rm.checkOut(r3,3, "RoachPay");
         System.out.println("cost:" + cost);
-        MotelRoom r9 = rm.checkIn(rc9,"Regular",amenities2);
+        MotelRoom r6 = rm.checkIn(rc6,"Regular",amenities2);
     }
 }
