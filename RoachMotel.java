@@ -1,19 +1,33 @@
+/**@authors Erina Lara, Eric Truong
+ * Date: May 6, 2020
+ * Program: Creates a motel with rooms that roaches can stay in
+ */
+
 import java.util.ArrayList;
 
 public class RoachMotel {
 	
+	/** One instance of a RoachMotel */
 	private static RoachMotel unique;
+	
+	/** List of rooms the motel will have */
 	private ArrayList<MotelRoom> rooms;
 
+	/** How many rooms the motel has */
 	private int capacity;
 
-	
+	/**
+	 * Creates a roach motel 
+	 */
 	private RoachMotel() {
 		//rooms = null;
 		rooms = new ArrayList<MotelRoom>();
 		capacity = 10;
 	}
 
+	/**
+	 * Creates the rooms in the motel
+	 */
 	public void createRooms() {
 
 		for (int i = 0; i < capacity; i++){
@@ -21,7 +35,10 @@ public class RoachMotel {
 		}
 	}
 
-	
+	/**
+	 * Creates a unique roach motel
+	 * @return	a single roach motel
+	 */
 	public static RoachMotel getInstance() {
 		
 		if (unique == null) {
@@ -32,6 +49,13 @@ public class RoachMotel {
 		return unique;
 	}
 
+	/**
+	 * Allows the roach colony to check in
+	 * @param r				roach colony checking in
+	 * @param type			type of room they want
+	 * @param amenities		what amenities are given
+	 * @return				room that they roach will be staying in
+	 */
 	public MotelRoom checkIn(RoachColony r, String type, ArrayList amenities) {
 		if (capacity != 0) {
 			RoomFactory factory = new RoomFactory();
@@ -65,6 +89,13 @@ public class RoachMotel {
 		}
 	}
 
+	/**
+	 * Allows a colony to check out of their room
+	 * @param r			type of room
+	 * @param days		how many days they spent
+	 * @param payType	payment method
+	 * @return			amount needed to pay
+	 */
 	public double checkOut(MotelRoom r, int days, String payType) {
 
 		double total = r.calculateTotal(days);
@@ -93,8 +124,9 @@ public class RoachMotel {
 
 	}
 
-
-
+	/**
+	 * Prints out the rooms available in the roach motel
+	 */
 	@Override
 	public String toString() {
 		String s = "";

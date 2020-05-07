@@ -1,28 +1,15 @@
+/**
+ * @authors Erina Lara, Eric Truong
+ * Date: May 6, 2020
+ * Program: Tester to try out the roach motel and all it's functionalities
+ */
+
 import java.util.ArrayList;
 
 public class TestRoom2 {
 
 
     public static void main(String args[]) {
-        /*
-        MotelRoom mr = new BasicRoom();
-        System.out.println(mr.getDescription()
-                + " $" + mr.cost());
-
-        MotelRoom mr2 = new BasicRoom();
-        mr2 = new FoodBar(mr2);
-        mr2 = new Spa(mr2);
-        mr2 = new AutoRefill(mr2);
-        System.out.println(mr2.getDescription()
-                + " $" + mr2.cost());
-
-        MotelRoom mr3 = new BasicRoom();
-        mr3 = new Spa(mr3);
-        mr3 = new SprayResistantShower(mr3);
-        mr3 = new FoodBar(mr3);
-        System.out.println(mr3.getDescription()
-                + " $" + mr3.cost());
-        */
 
         RoachMotel rm = RoachMotel.getInstance();
         rm.createRooms();
