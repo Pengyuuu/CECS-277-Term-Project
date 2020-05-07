@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class RoachMotel {
 	
 	private static RoachMotel unique;
-	private ArrayList rooms;
+	private ArrayList<MotelRoom> rooms;
 
 	private int capacity;
 
@@ -16,7 +16,7 @@ public class RoachMotel {
 	public void createRooms() {
 
 		for (int i = 0; i < capacity; i++){
-			rooms.add("10"+(i+1));
+			rooms.add(null);
 		}
 	}
 
@@ -42,7 +42,7 @@ public class RoachMotel {
 			rm = new SuiteRoom();
 
 		capacity --;
-
+		rooms.set((10-capacity), rm);
 		return rm;
 	}
 
