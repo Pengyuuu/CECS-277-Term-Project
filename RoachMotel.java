@@ -42,10 +42,9 @@ public class RoachMotel {
 
 			if (rooms.get(i) == null) {
 
-                room.addAmenities(amenities, room);
+                room = room.addAmenities(amenities, room);
                 capacity --;
                 rooms.set(i, room);
-				System.out.println(room.getDescription());
                 System.out.println("Added room");
                 break;
             }
