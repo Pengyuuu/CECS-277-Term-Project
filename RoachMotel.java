@@ -33,17 +33,23 @@ public class RoachMotel {
 
 	public MotelRoom checkIn(RoachColony r, String type, ArrayList amenities) {
 
-		MotelRoom rm = null;
-		if (type.equals("Basic"))
-			rm = new BasicRoom();
-		else if (type.equals("Deluxe"))
-			rm = new DeluxeRoom();
-		else if (type.equals("Suite"))
-			rm = new SuiteRoom();
+	    MotelRoom rm = null;
 
-        rm.addAmenities(amenities);
-		capacity --;
-		rooms.set((10-capacity), rm);
+        for (int i = 0; i < rooms.size(); i++){
+            if (rooms.get(i) == null) {
+                if (type.equals("Basic"))
+                    rm = new BasicRoom();
+                else if (type.equals("Deluxe"))
+                    rm = new DeluxeRoom();
+                else if (type.equals("Suite"))
+                    rm = new SuiteRoom();
+
+                rm.addAmenities(amenities);
+                capacity --;
+                rooms.set(i, rm);
+            }
+        }
+
 		return rm;
 	}
 
