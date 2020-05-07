@@ -16,10 +16,10 @@ public class RoachMotel {
 
 	public void createRooms() {
 
-		/*for (int i = 0; i < capacity; i++){
+		for (int i = 0; i < capacity; i++){
 			rooms.add(null);
-		}*/
-		rooms = new ArrayList<MotelRoom>(10);
+		}
+		//rooms = new ArrayList<MotelRoom>(10);
 	}
 
 	
@@ -37,8 +37,10 @@ public class RoachMotel {
 
 	    MotelRoom rm = null;
 
-        for (int i = 0; i < rooms.size(); i++){
-            if (rooms.get(i) == null) {
+        for (int i = 0; i < capacity; i++){
+			//System.out.println("added room");
+
+			if (rooms.get(i) == null) {
                 if (type.equals("Basic"))
                     rm = new BasicRoom();
                 else if (type.equals("Deluxe"))
