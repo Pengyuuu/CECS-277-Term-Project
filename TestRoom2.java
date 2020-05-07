@@ -32,7 +32,7 @@ public class TestRoom2 {
         ArrayList<String> amenities = new ArrayList();
         amenities.add("foodbar");
         amenities.add("spa");
-        amenities.add("refillbar");
+        amenities.add("autorefill");
         amenities.add("shower");
         MotelRoom r1 = rm.checkIn(rc1,"Suite",amenities);
         System.out.println(rc1);

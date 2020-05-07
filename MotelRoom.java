@@ -9,22 +9,23 @@ public abstract class MotelRoom {
     public String getDescription() { return description; }
 
 
-    public void addAmenities(ArrayList list, MotelRoom rm) {
-
+    public void addAmenities(ArrayList list) {
+        String adding = "";
         for (int i = 0; i < list.size(); i++) {
         	
             if (list.get(i).equals("foodbar")) {
-                rm = new FoodBar(rm);
+                adding = new FoodBar(this).getDescription();
             }
             else if (list.get(i).equals("spa")) {
-                rm = new Spa(rm);
+                adding = new Spa(this).getDescription();
             }
             else if (list.get(i).equals("refillbar")) {
-                rm = new AutoRefill(rm);
+                adding = new AutoRefill(this).getDescription();
             }
             else if (list.get(i).equals("shower")) {
-                rm = new SprayResistantShower(rm);
+                adding = new SprayResistantShower(this).getDescription();
             }
+            description = adding;
         }
     }
 

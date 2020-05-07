@@ -47,10 +47,10 @@ public class RoachMotel {
                 else if (type.equals("Suite"))
                     rm = new SuiteRoom();
 
-                rm.addAmenities(amenities, rm);
+                rm.addAmenities(amenities);
                 capacity --;
                 rooms.set(i, rm);
-
+				System.out.println(rm.getDescription());
                 System.out.println("Added room");
                 break;
             }
@@ -94,7 +94,6 @@ public class RoachMotel {
 	public String toString() {
 		String s = "";
 		String available = "Available: [";
-		System.out.println(rooms.size());
 		for (int i = 0; i < rooms.size(); i ++) {
             if (rooms.get(i) != null) {
             	//System.out.println(rooms.get(i).getDescription());
@@ -104,7 +103,7 @@ public class RoachMotel {
                 available += ("10" + (i) + " " );
             }
 		}
-		return s + available + "]";
+		return "Motel: {" + s + " } " + available + "]";
 	}
 
 }
