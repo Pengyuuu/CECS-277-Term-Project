@@ -9,11 +9,16 @@ public class AutoRefill extends AmenityDecorator {
 	
 	public String getDescription() {
 		
-		return room.getDescription() + " with auto refill";
+		return room.getDescription() + ", with auto refill";
 	}
 	
 	public double cost() {
 		
 		return room.cost() + 5;
+	}
+
+	@Override
+	public String toString() {
+		return "Auto refill.";
 	}
 }

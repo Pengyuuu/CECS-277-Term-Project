@@ -17,6 +17,6 @@ public class RoomFactory {
 
     @Override
     public String toString() {
-        return "";
+        return "Room factory";
     }
 }

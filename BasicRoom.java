@@ -14,6 +14,6 @@ public class BasicRoom extends MotelRoom {
 
     @Override
     public String toString() {
-        return "";
+        return "Basic room";
     }
 }

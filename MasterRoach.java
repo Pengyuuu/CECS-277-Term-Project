@@ -13,13 +13,13 @@ public class MasterRoach implements PaymentStrategy {
     }
 
     public void pay(double n) {
-        System.out.println("Paid with MasterRoach");
+        System.out.println(n + " Paid with MasterRoach");
 
     }
 
     @Override
     public String toString() {
-        return "MasterRoach card details: " + name;
+        return " MasterRoach card details: " + name;
     }
 
 

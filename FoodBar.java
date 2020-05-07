@@ -13,11 +13,16 @@ public class FoodBar extends AmenityDecorator {
 	}
 	
 	public String getDescription() {
-		return room.description + " with food bar";
+		return room.description + ", with food bar ";
 	}
 	
 	public double cost() {
 		
 		return room.cost() + 10;
+	}
+
+	@Override
+	public String toString() {
+		return "Food bar";
 	}
 }

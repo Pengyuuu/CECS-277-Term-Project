@@ -10,12 +10,12 @@ public class RoachPal implements PaymentStrategy {
     }
 
     public void pay(double n) {
-        System.out.println("Paid with RoachPal");
+        System.out.println(n + " Paid with RoachPal " + this.email);
 
     }
 
     @Override
     public String toString() {
-        return "RoachPal email details: " + email;
+        return " RoachPal email details: " + email;
     }
 }

@@ -14,11 +14,16 @@ public class SprayResistantShower extends AmenityDecorator {
 	
 	public String getDescription() {
 		
-		return room.getDescription() + " with a spray resistant shower";
+		return room.getDescription() + ", with a spray resistant shower ";
 	}
 	
 	public double cost() {
 		
 		return room.cost() + 25;
+	}
+
+	@Override
+	public String toString() {
+		return "Spray resistant shower";
 	}
 }

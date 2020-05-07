@@ -13,7 +13,7 @@ public class DeluxeRoom extends MotelRoom {
 
     @Override
     public String toString() {
-        return "";
+        return "Deluxe room";
     }
 }
 

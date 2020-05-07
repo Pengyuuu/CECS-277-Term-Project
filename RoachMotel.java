@@ -19,7 +19,6 @@ public class RoachMotel {
 		for (int i = 0; i < capacity; i++){
 			rooms.add(null);
 		}
-		//rooms = new ArrayList<MotelRoom>(10);
 	}
 
 	
@@ -34,37 +33,41 @@ public class RoachMotel {
 	}
 
 	public MotelRoom checkIn(RoachColony r, String type, ArrayList amenities) {
+		if (capacity != 0) {
+			RoomFactory factory = new RoomFactory();
+			MotelRoom room = factory.getRoom(type);
 
-		RoomFactory factory = new RoomFactory();
-		MotelRoom room = factory.getRoom(type);
+			for (int i = 0; i < rooms.size(); i++) {
 
-        for (int i = 0; i < rooms.size(); i++){
+				if (rooms.get(i) == null) {
 
-			if (rooms.get(i) == null) {
+					if (amenities.contains("shower")) {
+						double newGrowth = (r.getGrowth() + 1) * .25;
+						r.setGrowth(newGrowth);
+					} else {
+						double newGrowth = (r.getGrowth() + 1) * .5;
+						r.setGrowth(newGrowth);
+					}
 
-				if (amenities.contains("shower")) {
-					double newGrowth = (r.getGrowth() + 1) * .25;
-					r.setGrowth(newGrowth);
+					room = room.addAmenities(amenities, room);
+					room.setRoachCol(r);
+					rooms.set(i, room);
+					capacity--;
+					break;
 				}
-				else {
-					double newGrowth = (r.getGrowth()+ 1) * .5;
-					r.setGrowth(newGrowth);
-				}
+			}
 
-                room = room.addAmenities(amenities, room);
-
-				capacity --;
-                rooms.set(i, room);
-
-                break;
-            }
-        }
-		return room;
+			return room;
+		}
+		else {
+			System.out.println("Motel is full.");
+			return null;
+		}
 	}
 
 	public double checkOut(MotelRoom r, int days, String payType) {
 
-		double total = r.calculateTotal() * days;
+		double total = r.calculateTotal(days);
 
 		if (payType.equals("MasterRoach")) {
 			PaymentStrategy card = new MasterRoach("Roach", "1234", "567", "4/28/20");
@@ -96,15 +99,28 @@ public class RoachMotel {
 	public String toString() {
 		String s = "";
 		String available = "Available: [";
+		int count = 0;
 		for (int i = 0; i < rooms.size(); i ++) {
             if (rooms.get(i) != null) {
-                s += (rooms.get(i).getDescription());
+            	if (i != 0) {
+					s += (", " + rooms.get(i).getDescription() + " = " + rooms.get(i).getRoachCol() + " ");
+				}
+            	else {
+					s += (rooms.get(i).getDescription() + " = " + rooms.get(i).getRoachCol() + " ");
+				}
             }
             else {
-                available += ("10" + (i) + " " );
+            	if (count != 0) {
+					available += (", 10" + (i) + " " );
+				}
+            	else {
+					available += ("10" + (i) + "" );
+					count ++;
+				}
             }
 		}
-		return "Motel: {" + s + " } " + available + "]";
+
+		return "Motel: {" + s + " } " + available + "]" + '\n' + available + "]";
 	}
 
 }

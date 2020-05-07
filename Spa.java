@@ -14,11 +14,16 @@ public class Spa extends AmenityDecorator {
 	
 	public String getDescription() {
 		
-		return room.getDescription() + " with a spa";
+		return room.getDescription() + ", with a spa ";
 	}
 	
 	public double cost() {
 		
 		return room.cost() + 20;
+	}
+
+	@Override
+	public String toString() {
+		return "Spa";
 	}
 }

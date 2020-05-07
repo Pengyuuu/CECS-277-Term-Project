@@ -2,9 +2,12 @@ import java.util.ArrayList;
 
 public abstract class MotelRoom {
 
+    private RoachColony rc;
     protected String description;
     private double total;
     //private ArrayList amenities;
+
+
 
     public String getDescription() { return description; }
 
@@ -30,15 +33,26 @@ public abstract class MotelRoom {
         return rm;
     }
 
-    public double calculateTotal(){
-        total = this.cost();
+    public void setRoachCol(RoachColony r) {
+        rc = r;
+    }
+
+    public RoachColony getRoachCol() {
+        return rc;
+    }
+
+    public double calculateTotal(int days){
+        total = this.cost() * days;
         return total;
     }
 
     public void pay (PaymentStrategy paymentMethod){
-        double amount = calculateTotal();
-        paymentMethod.pay(amount);
+        paymentMethod.pay(total);
+    }
 
+    @Override
+    public String toString() {
+        return this.getDescription() + " " +  this.cost();
     }
 
     public abstract double cost();
