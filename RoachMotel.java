@@ -50,7 +50,8 @@ public class RoachMotel {
                 rm.addAmenities(amenities);
                 capacity --;
                 rooms.set(i, rm);
-                System.out.println(i + "added room");
+
+                System.out.println("Added room");
                 break;
             }
         }
@@ -73,7 +74,7 @@ public class RoachMotel {
 		for (int i = 0; i < rooms.size(); i++){
 			if (rooms.get(i) != null) {
 				if (rooms.get(i).getDescription().equals(r.getDescription())) {
-					System.out.println("Room number is: 10" + (1 + i));
+					System.out.println("Room number is: 10" + (i));
 
 					rooms.set(i, null);
 					capacity++;
@@ -92,16 +93,17 @@ public class RoachMotel {
 	@Override
 	public String toString() {
 		String s = "";
+		String available = "Available: [";
 		System.out.println(rooms.size());
 		for (int i = 0; i < rooms.size(); i ++) {
             if (rooms.get(i) != null) {
                 s += (rooms.get(i).getDescription());
             }
             else {
-                s += ("Available: 10" + (1+i));
+                available += ("10" + (i) + " " );
             }
 		}
-		return s;
+		return s + available + "]";
 	}
 
 }
