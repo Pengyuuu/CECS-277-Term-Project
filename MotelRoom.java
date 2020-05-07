@@ -36,7 +36,6 @@ public abstract class MotelRoom {
 
     public void pay (PaymentStrategy paymentMethod){
         double amount = calculateTotal();
-        //System.out.println(this.calculateTotal());
         paymentMethod.pay(amount);
 
     }
