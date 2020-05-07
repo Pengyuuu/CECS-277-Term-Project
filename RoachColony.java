@@ -18,7 +18,7 @@ public class RoachColony {
 
     @Override
     public String toString() {
-        return "";
+        return this.name + " " ;
     }
 
 

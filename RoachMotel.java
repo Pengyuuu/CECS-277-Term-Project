@@ -9,15 +9,17 @@ public class RoachMotel {
 
 	
 	private RoachMotel() {
-		
+		//rooms = null;
+		rooms = new ArrayList<MotelRoom>();
 		capacity = 10;
 	}
 
 	public void createRooms() {
 
-		for (int i = 0; i < capacity; i++){
+		/*for (int i = 0; i < capacity; i++){
 			rooms.add(null);
-		}
+		}*/
+		rooms = new ArrayList<MotelRoom>(10);
 	}
 
 	
@@ -46,10 +48,12 @@ public class RoachMotel {
 
                 rm.addAmenities(amenities);
                 capacity --;
-                rooms.set(i, rm);
+                rooms.add(i, rm);
+                System.out.println("added room");
             }
         }
-
+        //System.out.println(rooms.get(0));
+		System.out.println("checked in");
 		return rm;
 	}
 
@@ -57,22 +61,24 @@ public class RoachMotel {
 
 		double total = r.calculateTotal() * days;
 
-		if (payType == "MasterRoach") {
+		if (payType.equals("MasterRoach")) {
 			PaymentStrategy card = new MasterRoach("Roach", "1234", "567", "4/28/20");
 			r.pay(card);
 		}
-		else if (payType == "RoachPal") {
+		else if (payType.equals("RoachPal")) {
 			PaymentStrategy paypal = new RoachPal("roachster@aol.com","roach4life");
 			r.pay(paypal);
 		}
 
 		for (int i = 0; i < rooms.size(); i++){
-			if (rooms.get(i).getDescription() == r.getDescription()) {
-				System.out.println("Room number is: 10" + (1+i) );
+			if (rooms.get(i) != null) {
+				if (rooms.get(i).getDescription().equals(r.getDescription())) {
+					System.out.println("Room number is: 10" + (1 + i));
 
-				rooms.set(i, null);
-				capacity ++;
+					rooms.set(i, null);
+					capacity++;
 
+				}
 			}
 		}
 
@@ -85,16 +91,17 @@ public class RoachMotel {
 
 	@Override
 	public String toString() {
-
+		String s = "";
+		System.out.println(rooms.size());
 		for (int i = 0; i < rooms.size(); i ++) {
             if (rooms.get(i) != null) {
-                System.out.println(rooms.get(i).getDescription());
+                s += (rooms.get(i).getDescription());
             }
             else {
-                System.out.println("Available: 10" + (1+i));
+                s += ("Available: 10" + (1+i));
             }
 		}
-		return "";
+		return s;
 	}
 
 }

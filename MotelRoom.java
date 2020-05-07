@@ -7,10 +7,13 @@ public abstract class MotelRoom {
    // private ArrayList amenities;
 
 
+
+
     public String getDescription() { return description; }
 
 
     public void addAmenities(ArrayList list) {
+
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i) == "foodbar") {
                 new FoodBar(this);
