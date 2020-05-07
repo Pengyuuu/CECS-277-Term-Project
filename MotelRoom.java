@@ -9,7 +9,7 @@ public abstract class MotelRoom {
     public String getDescription() { return description; }
 
 
-    public void addAmenities(ArrayList list, MotelRoom rm) {
+    public MotelRoom addAmenities(ArrayList list, MotelRoom rm) {
 
         for (int i = 0; i < list.size(); i++) {
         	
@@ -26,6 +26,7 @@ public abstract class MotelRoom {
                 rm = new SprayResistantShower(rm);
             }
         }
+        return rm;
     }
 
     public double calculateTotal(){

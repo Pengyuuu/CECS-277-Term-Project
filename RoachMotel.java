@@ -35,27 +35,22 @@ public class RoachMotel {
 
 	public MotelRoom checkIn(RoachColony r, String type, ArrayList amenities) {
 
-	    MotelRoom rm = null;
+		RoomFactory factory = new RoomFactory();
+		MotelRoom room = factory.getRoom(type);
 
         for (int i = 0; i < rooms.size(); i++){
 
 			if (rooms.get(i) == null) {
-                if (type.equals("Basic"))
-                    rm = new BasicRoom();
-                else if (type.equals("Deluxe"))
-                    rm = new DeluxeRoom();
-                else if (type.equals("Suite"))
-                    rm = new SuiteRoom();
 
-                rm.addAmenities(amenities);
+                room.addAmenities(amenities, room);
                 capacity --;
-                rooms.set(i, rm);
-				System.out.println(rm.getDescription());
+                rooms.set(i, room);
+				System.out.println(room.getDescription());
                 System.out.println("Added room");
                 break;
             }
         }
-		return rm;
+		return room;
 	}
 
 	public double checkOut(MotelRoom r, int days, String payType) {
