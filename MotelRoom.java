@@ -4,7 +4,7 @@ public abstract class MotelRoom {
 
     protected String description;
     private double total;
-   // private ArrayList amenities;
+    //private ArrayList amenities;
 
     public String getDescription() { return description; }
 
@@ -24,6 +24,7 @@ public abstract class MotelRoom {
             }
             else if (list.get(i).equals("shower")) {
                 rm = new SprayResistantShower(rm);
+
             }
         }
         return rm;

@@ -10,8 +10,33 @@ public class RoachColony {
         growth = g;
     }
 
+    public void setPopulation(int pop) {
+        population = pop;
+    }
+
+    public void setGrowth(double g) {
+        growth = g;
+    }
+
+    public void setName (String n) {
+        name = n;
+    }
+
+    public int getPopulation() {
+        return population;
+    }
+
+    public double getGrowth() {
+        return growth;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     public void party() {
-        population *= growth;
+
+        population *= (growth);
     }
 
 

@@ -42,10 +42,20 @@ public class RoachMotel {
 
 			if (rooms.get(i) == null) {
 
+				if (amenities.contains("shower")) {
+					double newGrowth = (r.getGrowth() + 1) * .25;
+					r.setGrowth(newGrowth);
+				}
+				else {
+					double newGrowth = (r.getGrowth()+ 1) * .5;
+					r.setGrowth(newGrowth);
+				}
+
                 room = room.addAmenities(amenities, room);
 
 				capacity --;
                 rooms.set(i, room);
+
                 break;
             }
         }
@@ -88,7 +98,6 @@ public class RoachMotel {
 		String available = "Available: [";
 		for (int i = 0; i < rooms.size(); i ++) {
             if (rooms.get(i) != null) {
-            	//System.out.println(rooms.get(i).getDescription());
                 s += (rooms.get(i).getDescription());
             }
             else {
