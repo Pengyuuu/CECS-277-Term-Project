@@ -6,29 +6,26 @@ public abstract class MotelRoom {
     private double total;
    // private ArrayList amenities;
 
-
-
-
     public String getDescription() { return description; }
 
 
-    public void addAmenities(ArrayList list) {
+    public void addAmenities(ArrayList list, MotelRoom rm) {
 
         for (int i = 0; i < list.size(); i++) {
-            if (list.get(i) == "foodbar") {
-                new FoodBar(this);
+        	
+            if (list.get(i).equals("foodbar")) {
+                rm = new FoodBar(rm);
             }
-            else if (list.get(i) == "spa") {
-                new Spa(this);
+            else if (list.get(i).equals("spa")) {
+                rm = new Spa(rm);
             }
-            else if (list.get(i) == "autorefill") {
-                new AutoRefill(this);
+            else if (list.get(i).equals("refillbar")) {
+                rm = new AutoRefill(rm);
             }
-            else if (list.get(i) == "shower") {
-                new SprayResistantShower(this);
+            else if (list.get(i).equals("shower")) {
+                rm = new SprayResistantShower(rm);
             }
         }
-
     }
 
     public double calculateTotal(){

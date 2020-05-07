@@ -15,4 +15,5 @@ public class SuiteRoom extends MotelRoom {
     public String toString() {
         return "";
     }
+    
 }
